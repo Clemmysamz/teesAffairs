@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f2ed;
+  --foreground: #080808;
+  --muted: #a4a4a4;
+  --panel: #ffffff;
+  --dark: #080808;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+@media (max-width: 47.99rem) {
+  .product-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+:where(div, article, aside, a)[class~="border"][class~="bg-white"] {
+  border-radius: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
